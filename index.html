@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Game</title>
+  </head>
+  <body>
+    <header class="scoreboard">
+      <div class="title__wrapper">
+        <h1 class="title">Rock</h1>
+        <h1 class="title">Paper</h1>
+        <h1 class="title">Scissors</h1>
+      </div>
+      <div class="scorecard__wrapper">
+        <div class="scorecard">
+          <h3 class="scorecard__title">Computer Score</h3>
+          <span class="score">0</span>
+        </div>
+        <div class="scorecard">
+          <h3 class="scorecard__title">Your Score</h3>
+          <span class="score">0</span>
+        </div>
+      </div>
+    </header>
+    <main class="main">
+      <section class="gameboard">
+        <button class="choice" data-value="rock">
+          <div class="rock">
+            <img src="./images/stone.svg" alt="stone" />
+          </div>
+        </button>
+        <button class="choice" data-value="scissor">
+          <div class="scissor">
+            <img src="./images/scissor.svg" alt="scissor" />
+          </div>
+        </button>
+        <button class="choice" data-value="paper">
+          <div class="paper">
+            <img src="./images/papper.svg" alt="paper" />
+          </div>
+        </button>
+      </section>
+      <section class="result">
+        <div class="result__wrapper">
+          <div class="choice" data-value="rock">
+            <h1 class="chosed__title">you picked</h1>
+            <div class="rock rock__result">
+              <img src="./images/stone.svg" alt="stone" />
+            </div>
+          </div>
+          <div class="result__message">
+            <h2 class="message">
+              You Win <br />
+              <span>against pc</span>
+            </h2>
+            <button class="btn btn__play_again">Play again</button>
+          </div>
+          <div class="choice" data-value="scissor">
+            <h1 class="chosed__title">pc picked</h1>
+            <div class="scissor scissor__result">
+              <img src="./images/scissor.svg" alt="scissor" />
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="rules">
+        <div class="rules__modal" hidden>
+          <button class="btn__close--modal">
+            <img src="./images/X.svg" class="icon" alt="close" />
+          </button>
+          <div class="rules__container">
+            <h1 class="rules__title">Game Rules</h1>
+          </div>
+          <ul class="rules__list">
+            <li class="list rule-1">
+              Rock beats scissors, scissors beat paper, and paper beats rock.
+            </li>
+            <li class="list rule-2">
+              Agree ahead of time whether you’ll count off “rock, paper,
+              scissors, shoot” or just “rock, paper, scissors.”
+            </li>
+            <li class="list rule-3">
+              Use rock, paper, scissors to settle minor decisions or simply play
+              to pass the time
+            </li>
+            <li class="list rule-4">
+              If both players lay down the same hand, each player lays down
+              another hand
+            </li>
+          </ul>
+        </div>
+        <div class="btn__wrapper">
+          <button class="btn rules-btn">rules</button>
+          <button class="btn next-btn">next</button>
+        </div>
+      </section>
+    </main>
+    <script src="/index.js"></script>
+  </body>
+</html>
