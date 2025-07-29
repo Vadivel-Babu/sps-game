@@ -25,7 +25,7 @@ button {
 .scoreboard {
   border: 2px solid var(--white);
   width: 800px;
-  display: flex;
+  display: none;
   justify-content: space-between;
   padding: 20px;
   border-radius: 13px;
@@ -266,4 +266,22 @@ button {
   letter-spacing: 1.6px;
   font-size: 15px;
   background-color: var(--white);
+}
+.container {
+  max-width: 520px;
+  margin: 50px auto;
+  text-align: center;
+  padding: 15px;
+  letter-spacing: 1.6px;
+  color: var(--white);
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.winning__title {
+  font-size: 91px;
+  margin: 20px 0;
+}
+.winning__msg {
+  font-size: 41px;
+  margin-bottom: 20px;
 }
