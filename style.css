@@ -25,7 +25,7 @@ button {
 .scoreboard {
   border: 2px solid var(--white);
   width: 800px;
-  display: none;
+  display: flex;
   justify-content: space-between;
   padding: 20px;
   border-radius: 13px;
@@ -107,35 +107,25 @@ button {
 .rock,
 .scissor,
 .paper {
-  width: 110px;
-  height: 110px;
+  width: 140px;
+  height: 140px;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: var(--white);
+  border: 15px solid transparent;
   position: relative;
+  box-shadow: -4px -1px 22px -2px rgba(0, 0, 0, 0.75);
 }
-.rock::before,
-.scissor::before,
-.paper::before {
-  position: absolute;
-  content: " ";
-  width: 130%;
-  height: 130%;
-  left: -15%;
-  top: -15%;
-  border-radius: 50%;
-  z-index: -1;
+.rock {
+  border-color: var(--blue);
 }
-.rock::before {
-  background-color: var(--blue);
+.scissor {
+  border-color: var(--purple);
 }
-.scissor::before {
-  background-color: var(--purple);
-}
-.paper::before {
-  background-color: var(--orange);
+.paper {
+  border-color: var(--orange);
 }
 .rock__result,
 .scissor__result,
