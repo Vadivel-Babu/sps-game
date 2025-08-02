@@ -14,6 +14,9 @@
   --darkgreen: #004429;
   --yellow: #ffd600;
   --red: #ff0000;
+  --anime-green: #3b6720;
+  --anime-green-primary: #1da82b;
+  --anime-green-secondary: #2e9a25;
 }
 body {
   background-color: var(--green);
@@ -130,8 +133,27 @@ button {
 .rock__result,
 .scissor__result,
 .paper__result {
-  width: 140px;
-  height: 140px;
+  width: 160px;
+  height: 160px;
+  position: relative;
+}
+.rock__result::after {
+  content: " ";
+  position: absolute;
+  z-index: -1;
+  width: 160%;
+  height: 160%;
+  border-radius: 50%;
+  background-color: var(--anime-green);
+}
+.rock__result::before {
+  content: " ";
+  position: absolute;
+  z-index: -1;
+  width: 180%;
+  height: 180%;
+  border-radius: 50%;
+  background-color: var(--anime-green-primary);
 }
 .rules {
   height: 200px;
