@@ -14,9 +14,9 @@
   --darkgreen: #004429;
   --yellow: #ffd600;
   --red: #ff0000;
-  --anime-green: #3b6720;
+  --anime-green: rgba(59, 103, 32, 1);
   --anime-green-primary: #1da82b;
-  --anime-green-secondary: #2e9a25;
+  --anime-green-secondary: rgba(29, 168, 43, 0.79);
 }
 body {
   background-color: var(--green);
@@ -135,25 +135,35 @@ button {
 .paper__result {
   width: 160px;
   height: 160px;
+}
+.result--won {
   position: relative;
 }
-.rock__result::after {
-  content: " ";
+.won {
   position: absolute;
   z-index: -1;
-  width: 160%;
-  height: 160%;
-  border-radius: 50%;
+  width: 250px;
+  height: 250px;
   background-color: var(--anime-green);
+  border-radius: 50%;
 }
-.rock__result::before {
+.result--won::after {
   content: " ";
   position: absolute;
-  z-index: -1;
-  width: 180%;
-  height: 180%;
+  z-index: -2;
+  width: 300px;
+  height: 300px;
   border-radius: 50%;
   background-color: var(--anime-green-primary);
+}
+.result--won::before {
+  content: " ";
+  position: absolute;
+  z-index: -1;
+  width: 340px;
+  height: 340px;
+  border-radius: 50%;
+  background-color: var(--anime-green-secondary);
 }
 .rules {
   height: 200px;
