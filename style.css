@@ -71,7 +71,7 @@ button {
 }
 .gameboard {
   position: relative;
-  display: none;
+  display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-areas:
     "rock scissor"
@@ -191,6 +191,7 @@ button {
 }
 .next-btn {
   margin-left: 15px;
+  display: none;
 }
 .rules__modal {
   border: 7px solid var(--white);
@@ -229,6 +230,9 @@ button {
   text-align: center;
   margin: 15px 0;
 }
+.rules__modal {
+  display: none;
+}
 .rules__list {
   list-style: square;
 }
@@ -243,6 +247,7 @@ button {
   width: 100%;
   margin-top: 150px;
   min-height: 350px;
+  display: none;
 }
 .result__wrapper {
   display: flex;
@@ -288,6 +293,9 @@ button {
   letter-spacing: 1.6px;
   font-size: 15px;
   background-color: var(--white);
+}
+.winning {
+  display: none;
 }
 .container {
   max-width: 520px;

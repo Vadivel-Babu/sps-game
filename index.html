@@ -26,19 +26,23 @@
     </header>
     <main class="main">
       <section class="gameboard">
-        <button class="choice" data-value="rock">
-          <div class="rock">
-            <img src="./images/stone.svg" alt="stone" />
+        <button class="choice choice__btn" data-value="rock">
+          <div class="rock" data-value="rock">
+            <img src="./images/stone.svg" alt="stone" data-value="rock" />
           </div>
         </button>
-        <button class="choice" data-value="scissor">
-          <div class="scissor">
-            <img src="./images/scissor.svg" alt="scissor" />
+        <button class="choice choice__btn" data-value="scissor">
+          <div class="scissor" data-value="scissor">
+            <img
+              src="./images/scissor.svg"
+              alt="scissor"
+              data-value="scissor"
+            />
           </div>
         </button>
-        <button class="choice" data-value="paper">
-          <div class="paper">
-            <img src="./images/papper.svg" alt="paper" />
+        <button class="choice choice__btn" data-value="paper">
+          <div class="paper" data-value="paper">
+            <img src="./images/papper.svg" alt="paper" data-value="paper" />
           </div>
         </button>
       </section>
@@ -66,7 +70,7 @@
           </div>
         </div>
       </section>
-      <section class="winning" hidden>
+      <section class="winning">
         <div class="container">
           <img src="./images/winning.png" alt="cup" class="winning__img" />
           <h1 class="winning__title">Hurray!!</h1>
@@ -75,7 +79,7 @@
         </div>
       </section>
       <section class="rules">
-        <div class="rules__modal" hidden>
+        <div class="rules__modal">
           <button class="btn__close--modal">
             <img src="./images/X.svg" class="icon" alt="close" />
           </button>
