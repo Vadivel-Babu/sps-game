@@ -1,5 +1,9 @@
 "use strict";
 window.onload = function () {
+  let humanTotalScore = localStorage.getItem("humanTotalScore") || 0;
+
+  let computerTotalScore = localStorage.getItem("computerTotalScore") || 0;
+  console.log(humanTotalScore, computerTotalScore);
   let computerScore = document.querySelector(".score.computer");
   let scoreBoard = document.querySelector(".scoreboard");
   let humanScore = document.querySelector(".score.human");
@@ -12,9 +16,11 @@ window.onload = function () {
   const nextBtn = document.querySelector(".next-btn");
   const rulesBtn = document.querySelector(".rules-btn");
   const modalCloseBtn = document.querySelector(".btn__close--modal");
-  let humanTotalScore = 0;
-  let computerTotalScore = 0;
+
   const choices = ["rock", "paper", "scissor"];
+
+  computerScore.textContent = computerTotalScore;
+  humanScore.textContent = humanTotalScore;
 
   //selecting the choice
   choicesBtn.forEach((choice) => {
@@ -33,6 +39,8 @@ window.onload = function () {
         (value === "scissor" && choices[computerChoice] === "rock")
       ) {
         computerTotalScore++;
+        localStorage.setItem("computerTotalScore", computerTotalScore);
+
         computerScore.textContent = computerTotalScore;
         nextBtn.style.display = "none";
         gameboardSection.style.display = "none";
@@ -43,6 +51,7 @@ window.onload = function () {
         (value === "rock" && choices[computerChoice] === "scissor")
       ) {
         humanTotalScore++;
+        localStorage.setItem("humanTotalScore", humanTotalScore);
         humanScore.textContent = humanTotalScore;
         nextBtn.style.display = "inline";
         gameboardSection.style.display = "none";
