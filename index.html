@@ -28,7 +28,7 @@
       <section class="gameboard">
         <button class="choice choice__btn" data-value="rock">
           <div class="rock" data-value="rock">
-            <img src="./images/stone.svg" alt="stone" data-value="rock" />
+            <img src="./images/rock.svg" alt="rock" data-value="rock" />
           </div>
         </button>
         <button class="choice choice__btn" data-value="scissor">
@@ -42,29 +42,27 @@
         </button>
         <button class="choice choice__btn" data-value="paper">
           <div class="paper" data-value="paper">
-            <img src="./images/papper.svg" alt="paper" data-value="paper" />
+            <img src="./images/paper.svg" alt="paper" data-value="paper" />
           </div>
         </button>
       </section>
       <section class="result">
         <div class="result__wrapper">
-          <div class="choice" data-value="rock">
+          <div class="choice result__choice">
             <h1 class="chosed__title">you picked</h1>
-            <div class="rock rock__result result--won">
+            <div class="rock chosed__item result--won">
+              <img src="./images/rock.svg" alt="stone" />
               <div class="won"></div>
-              <img src="./images/stone.svg" alt="stone" />
             </div>
           </div>
           <div class="result__message">
-            <h2 class="message">
-              You Win <br />
-              <span>against pc</span>
-            </h2>
+            <h2 class="message">You Win <br /></h2>
+            <span class="message span">against pc</span>
             <button class="btn btn__play_again">Play again</button>
           </div>
-          <div class="choice" data-value="scissor">
+          <div class="choice result__choice">
             <h1 class="chosed__title">pc picked</h1>
-            <div class="scissor scissor__result">
+            <div class="scissor chosed__item">
               <img src="./images/scissor.svg" alt="scissor" />
             </div>
           </div>
