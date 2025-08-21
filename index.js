@@ -16,7 +16,7 @@ window.onload = function () {
   const modalCloseBtn = document.querySelector(".btn__close--modal");
   let message = document.querySelector(".message");
   let chosedItems = document.querySelectorAll(".chosed__item");
-  console.log(chosedItems[0].children[0].getAttribute("src"));
+  let wonDiv = document.querySelectorAll(".won");
 
   let span = document.querySelector(".span");
 
@@ -30,13 +30,14 @@ window.onload = function () {
     choice.addEventListener("click", (e) => {
       const value = e.target.getAttribute("data-value");
       const computerChoice = Math.floor(Math.random() * 2) + 1;
-      console.log(value, choices[computerChoice]);
       if (value === choices[computerChoice]) {
         nextBtn.style.display = "none";
         gameboardSection.style.display = "none";
         resultSection.style.display = "flex";
         message.textContent = "tie up";
         span.textContent = "";
+        chosedItems[0].classList.add(choices[computerChoice]);
+        chosedItems[1].classList.add(value);
         chosedItems[0].children[0].setAttribute("src", `./images/${value}.svg`);
         chosedItems[1].children[0].setAttribute(
           "src",
@@ -60,7 +61,9 @@ window.onload = function () {
           "src",
           `./images/${choices[computerChoice]}.svg`
         );
-        //message.children[1].textContent = "against you";
+        chosedItems[1].classList.add(choices[computerChoice], "result--won");
+        chosedItems[0].classList.add(value);
+        wonDiv[1].classList.add("active");
       } else if (
         (value === "paper" && choices[computerChoice] === "rock") ||
         (value === "scissor" && choices[computerChoice] === "paper") ||
@@ -79,6 +82,9 @@ window.onload = function () {
           "src",
           `./images/${choices[computerChoice]}.svg`
         );
+        chosedItems[1].classList.add(choices[computerChoice]);
+        chosedItems[0].classList.add(value, "result--won");
+        wonDiv[0].classList.add("active");
       }
     });
   });
@@ -91,6 +97,20 @@ window.onload = function () {
       gameboardSection.style.display = "grid";
       scoreBoard.style.display = "flex";
       nextBtn.style.display = "none";
+      chosedItems[0].classList.remove(
+        "rock",
+        "paper",
+        "scissor",
+        "result--won"
+      );
+      chosedItems[1].classList.remove(
+        "rock",
+        "paper",
+        "scissor",
+        "result--won"
+      );
+      wonDiv[0].classList.remove("active");
+      wonDiv[1].classList.remove("active");
     });
   });
 

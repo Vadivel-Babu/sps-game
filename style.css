@@ -144,7 +144,15 @@ button {
   height: 250px;
   background-color: var(--anime-green);
   border-radius: 50%;
+  transform: scale(0);
 }
+.won.active {
+  /* transform: scale(1);
+  transition: all 10s ease-in-out;
+  transition-delay: 0.5s; */
+  animation: scaling 0.5s linear infinite alternate;
+}
+
 .result--won::after {
   content: " ";
   position: absolute;
@@ -153,6 +161,7 @@ button {
   height: 300px;
   border-radius: 50%;
   background-color: var(--anime-green-primary);
+  animation: scaling 0.5s linear infinite alternate;
 }
 .result--won::before {
   content: " ";
@@ -162,6 +171,15 @@ button {
   height: 340px;
   border-radius: 50%;
   background-color: var(--anime-green-secondary);
+  animation: scaling 0.5s linear infinite alternate;
+}
+@keyframes scaling {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
 }
 .rules {
   height: 200px;
@@ -305,11 +323,44 @@ button {
   text-transform: uppercase;
   font-weight: 700;
 }
+.winning__img {
+  animation: fadein 1s linear;
+}
 .winning__title {
   font-size: 91px;
   margin: 20px 0;
+  animation: slidein 1s linear;
 }
 .winning__msg {
   font-size: 41px;
   margin-bottom: 20px;
+  animation: scaleup 1s linear;
+}
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes slidein {
+  from {
+    opacity: 0;
+    transform: translateX(200px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes scaleup {
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
